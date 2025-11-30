@@ -10,11 +10,15 @@ class ThemeManager {
     init() {
         this.applySavedTheme();
         this.setupEventListeners();
+        this.updateSelectValue();
     }
 
     setupEventListeners() {
         const themeSelect = document.getElementById('theme-select');
         if (themeSelect) {
+            // Устанавливаем текущее значение
+            themeSelect.value = this.getSavedTheme();
+            
             themeSelect.addEventListener('change', (e) => {
                 this.setTheme(e.target.value);
             });
@@ -27,22 +31,36 @@ class ThemeManager {
 
     applySavedTheme() {
         const savedTheme = this.getSavedTheme();
-        this.setTheme(savedTheme, false); // false - не сохранять снова
+        this.setTheme(savedTheme, false);
     }
 
     setTheme(themeName, save = true) {
         if (this.themes.includes(themeName)) {
+            // Устанавливаем атрибут theme у root элемента
             document.documentElement.setAttribute('theme', themeName);
             
-            const themeSelect = document.getElementById('theme-select');
-            if (themeSelect) {
-                themeSelect.value = themeName;
-            }
+            // Обновляем значение в select
+            this.updateSelectValue();
             
             if (save) {
                 localStorage.setItem('selected-theme', themeName);
             }
+            
+            console.log('Theme changed to:', themeName);
         }
+    }
+
+    updateSelectValue() {
+        const themeSelect = document.getElementById('theme-select');
+        const currentTheme = this.getCurrentTheme();
+        
+        if (themeSelect) {
+            themeSelect.value = currentTheme;
+        }
+    }
+
+    getCurrentTheme() {
+        return document.documentElement.getAttribute('theme') || this.getSavedTheme();
     }
 
     // Метод для добавления новых тем
