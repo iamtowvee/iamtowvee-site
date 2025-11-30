@@ -1,21 +1,136 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <link rel="stylesheet" href="/assets/styles/default.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home · ru</title>
+        
+        <!-- Основные стили тем -->
+        <link rel="stylesheet" href="/assets/styles/interface-pc.css" media="(min-width: 769px)">
+        <link rel="stylesheet" href="/assets/styles/interface-mobile.css" media="(max-width: 768px)">
     </head>
     <body>
-        <div class="theme-switcher">
-            <select id="theme-select">
-                <option value="light-def">Light Default</option>
-                <option value="dark-def">Dark Default</option>
-                <option value="night-def">Dark Night Default</option>
-                <option value="light-contrast">Light Contrast</option>
-                <option value="dark-contrast">Dark Contrast</option>
-                <option value="night-contrast">Dark Night Contrast</option>
-            </select>
-        </div>
-        
+        <!-- Боковая панель (только для PC) -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-heading">Navigation</h3>
+                    <a href="#" class="nav-link active">
+                        <span class="nav-icon">🏠</span>
+                        Home
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📁</span>
+                        Projects
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">📝</span>
+                        Articles
+                    </a>
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">👤</span>
+                        About
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Верхняя панель -->
+            <header class="top-bar">
+                <div class="top-bar-left">
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="breadcrumbs">
+                        <a href="/">iamtowvee</a>
+                        <span class="separator">/</span>
+                        <a href="/ru/">ru</a>
+                        <span class="separator">/</span>
+                        <span class="current">home</span>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <div class="theme-switcher">
+                        <select id="theme-select">
+                            <option value="light-def">Light</option>
+                            <option value="dark-def">Dark</option>
+                            <option value="night-def">Night</option>
+                            <option value="light-contrast">Light Contrast</option>
+                            <option value="dark-contrast">Dark Contrast</option>
+                            <option value="night-contrast">Night Contrast</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Контент страницы -->
+            <div class="content-area">
+                <div class="container">
+                    <div class="profile-header">
+                        <img src="/assets/images/avatar.jpg" alt="Avatar" class="avatar">
+                        <div class="profile-info">
+                            <h1>iamtowvee</h1>
+                            <p class="bio">Developer & Creator</p>
+                            <div class="stats">
+                                <span class="stat">
+                                    <strong>24</strong> repositories
+                                </span>
+                                <span class="stat">
+                                    <strong>128</strong> followers
+                                </span>
+                                <span class="stat">
+                                    <strong>56</strong> following
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="repo-list">
+                        <div class="repo-card">
+                            <div class="repo-header">
+                                <h3 class="repo-name">
+                                    <span class="repo-icon">📦</span>
+                                    awesome-project
+                                </h3>
+                                <span class="repo-visibility">Public</span>
+                            </div>
+                            <p class="repo-description">An awesome project description goes here</p>
+                            <div class="repo-meta">
+                                <span class="repo-language">
+                                    <span class="language-color"></span>
+                                    JavaScript
+                                </span>
+                                <span class="repo-updated">Updated today</span>
+                            </div>
+                        </div>
+
+                        <div class="repo-card">
+                            <div class="repo-header">
+                                <h3 class="repo-name">
+                                    <span class="repo-icon">🔧</span>
+                                    utility-tools
+                                </h3>
+                                <span class="repo-visibility">Private</span>
+                            </div>
+                            <p class="repo-description">Collection of useful utility tools</p>
+                            <div class="repo-meta">
+                                <span class="repo-language">
+                                    <span class="language-color"></span>
+                                    TypeScript
+                                </span>
+                                <span class="repo-updated">Updated 2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
         <script src="/assets/scripts/theme.js"></script>
+        <script src="/assets/scripts/mobile-menu.js"></script>
     </body>
 </html>
