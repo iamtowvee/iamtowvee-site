@@ -1,0 +1,265 @@
+/* Все темы из предыдущего ответа остаются тут */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f8fa;
+    --bg-tertiary: #eaeef2;
+    --text-primary: #1f2328;
+    --text-secondary: #656d76;
+    --text-tertiary: #8b949e;
+    --accent-primary: #0969da;
+    --accent-hover: #035fc7;
+    --border-color: #d0d7de;
+    --border-radius: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Остальные темы (dark-def, night-def и т.д.) остаются такими же */
+
+/* PC Layout */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 24px 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-nav {
+    padding: 0 16px;
+}
+
+.nav-heading {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 24px 0 8px 0;
+    padding: 0 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border-radius: var(--border-radius);
+    margin-bottom: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.nav-link.active {
+    background-color: var(--accent-primary);
+    color: white;
+    font-weight: 500;
+}
+
+.nav-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar */
+.top-bar {
+    height: 64px;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    color: var(--text-tertiary);
+}
+
+.breadcrumbs .current {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Theme Switcher */
+.theme-switcher select {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Content Area */
+.content-area {
+    flex: 1;
+    padding: 32px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+.profile-info h1 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.bio {
+    color: var(--text-secondary);
+    margin: 0 0 16px 0;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+}
+
+.stat {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.stat strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Repository List */
+.repo-list {
+    display: grid;
+    gap: 16px;
+}
+
+.repo-card {
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-primary);
+    transition: border-color 0.2s;
+}
+
+.repo-card:hover {
+    border-color: var(--accent-primary);
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.repo-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.repo-visibility {
+    font-size: 12px;
+    padding: 2px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-secondary);
+}
+
+.repo-description {
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+    font-size: 14px;
+}
+
+.repo-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+.repo-language {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.language-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+}
